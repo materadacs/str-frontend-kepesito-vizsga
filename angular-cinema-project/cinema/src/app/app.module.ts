@@ -7,13 +7,14 @@ import { MovieListComponent } from './movie-list/movie-list.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { HttpService } from './service/http.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     MovieComponent,
-    MovieListComponent,
     MovieDetailsComponent,
+    MovieListComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [HttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

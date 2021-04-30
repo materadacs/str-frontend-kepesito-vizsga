@@ -1,5 +1,5 @@
 <section class="table-section">
-    <button id="get-button">Get movie List</button>
+    <button (click)="getMovieList()" id="get-button">Get movie List</button>
     <table>
         <thead>
           <tr>
@@ -10,7 +10,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr class="table-row"></tr>
+          <trb *ngFor="let movie of movies" class="table-row">
+            <td>{{ movie.title }}</td>
+            <td>{{ movie.year }}</td>
+            <td>{{ movie.category }}</td>
+            <td><button (click)="deleteMovie(id)" class="btn btn-danger">Delete</button></td>
+          </tr>
         </tbody>
     </table>
 </section>
